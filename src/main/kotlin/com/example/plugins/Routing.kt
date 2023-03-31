@@ -16,7 +16,7 @@ fun Application.configureRouting() {
             call.respondText("Hello World!")
         }
 
-        get("/words") {
+        post("/words") {
             val letterWord = call.receive<WordsWithLetterModel>()
             val filtered = letterWord.copy(
                 words = letterWord.words.filter {
